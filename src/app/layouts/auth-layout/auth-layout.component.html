@@ -1,0 +1,27 @@
+<div class="auth-grid">
+    <div class="auth-column-1">
+        <div class="logo-area">
+            <img src="assets/icons/world.png" />
+            <div class="title-area">
+                <h3>WorldChat</h3>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="description-area">
+                <h3>Converse com pessoas do mundo todo, crie salas e faça novas amizades.</h3>
+            </div>
+            <img src="assets/icons/chat-video.gif"/>
+        </div>
+    </div>
+    <div class="auth-column-2">
+        <div *ngIf = "page == 'login'; else elseBlock">
+            <app-login-form-layout></app-login-form-layout>
+        </div>
+        <ng-template #elseBlock>
+            <div>
+                <app-signup-form-layout></app-signup-form-layout>
+            </div>
+        </ng-template>
+    </div>
+</div>
