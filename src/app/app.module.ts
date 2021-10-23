@@ -13,6 +13,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { LoginComponent } from './pages/auth/login/login.component';
 import { LoginFormLayoutComponent } from './layouts/auth-layout/login-form-layout/login-form-layout.component';
 import { SignupFormLayoutComponent } from './layouts/auth-layout/signup-form-layout/signup-form-layout.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SignupFormLayoutComponent } from './layouts/auth-layout/signup-form-lay
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     UserService

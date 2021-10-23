@@ -1,12 +1,12 @@
 <div class="bg-gray-100 login-form">
-    <form class="bg-white shadow-xl rounded px-8 pt-6 pb-8">
+    <form class="bg-white shadow-xl rounded px-8 pt-6 pb-8" #f="ngForm" (ngSubmit)="onSubmit()">
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                 Usuário
             </label>
             <input
                 class="shadow appearance-none border {{ errorUsername != '' ? 'border-red-500' : '' }} rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="username" type="text" placeholder="Usuário" required>
+                id="username" name="username" type="text" placeholder="Usuário" required [(ngModel)]="user.username">
         </div>
         <div class="mb-6">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
@@ -14,7 +14,7 @@
             </label>
             <input
                 class="shadow appearance-none border {{ errorPassword != '' ? 'border-red-500' : '' }} rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                id="password" type="password" placeholder="********" required>
+                id="password" name="password" type="password" placeholder="********" required [(ngModel)]="user.password">
             <p *ngIf="errorUsername != ''" class="text-red-500 text-xs italic">{{ errorUsername }}</p>
             <p *ngIf="errorPassword != ''" class="text-red-500 text-xs italic">{{ errorPassword }}</p>
         </div>
