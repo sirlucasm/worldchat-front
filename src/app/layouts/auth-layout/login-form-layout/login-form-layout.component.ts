@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login-form-layout',
@@ -15,13 +17,18 @@ export class LoginFormLayoutComponent implements OnInit {
     password: ''
   }
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(this.user);
+    this.userService.login(this.user)
+      .then(_ => this.router.navigate(['dashboard']))
+      .catch(error => console.log(error));
   }
 
 }
