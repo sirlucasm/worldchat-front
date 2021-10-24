@@ -1,35 +1,36 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { User } from '../interfaces/user.interface';
-import API from './config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() { }
+  constructor(private API: HttpClient) {}
 
-  async createAccount (params: User) {
-    return (await API.post('/users', params)).data;
+  createAccount (params: User) {
+    return this.API.post(environment.API_HOST + 'users', params);
   }
 
-  async currentUser (params: any) {
-    return (await API.get('/users/:id', { params: { id: params.id } })).data;
+  currentUser (params: any) {
+    return this.API.get(environment.API_HOST + 'users/:id', { params: { id: params.id } });
   }
 
-  async all () {
-    return (await API.get('/users')).data;
+  all () {
+    return this.API.get(environment.API_HOST + 'users');
   }
 
-  async login (params: User) {
-    return (await API.post('/users/login', params)).data;
+  login (params: User) {
+    return this.API.post(environment.API_HOST + 'users/login', params);
   }
 
-  async update (params: User) {
-    return (await API.put('/users', params)).data;
+  update (params: User) {
+    return this.API.put(environment.API_HOST + 'users', params);
   }
 
-  async deleteAccount (params: User) {
-    return (await API.delete('/users', { data: params })).data;
+  deleteAccount (params: User) {
+    return this.API.delete(environment.API_HOST + 'users', { body: params });
   }
 }

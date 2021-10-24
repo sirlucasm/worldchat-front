@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AuthGuardService as AuthGuard } from './services/auth/auth-guard.service';
+import { LoggedAuthGuardService as LoggedAuthGuard } from './services/auth/logged-auth-guard.service';
 
 const routes: Routes = [
   //APP Routes
@@ -12,19 +14,33 @@ const routes: Routes = [
     redirectTo: '/entrar',
     pathMatch: 'full'
   },
+  
+  // PROTECTED Routes
   {
-    path: 'dashboard',
-    component: DashboardComponent,
+    path: '',
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+    ],
+    canActivate: [AuthGuard]
   },
 
   // AUTH Routes
   {
-    path: 'entrar',
-    component: LoginComponent,
-  },
-  {
-    path: 'criar-conta',
-    component: SignupComponent,
+    path: '',
+    children: [
+      {
+        path: 'entrar',
+        component: LoginComponent,
+      },
+      {
+        path: 'criar-conta',
+        component: SignupComponent,
+      }
+    ],
+    canActivate: [LoggedAuthGuard]
   }
 ];
 

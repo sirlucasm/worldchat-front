@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { Toast } from 'src/app/interfaces/toast.interface';
 import { User } from 'src/app/interfaces/user.interface';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,8 +10,14 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login-form-layout.component.scss']
 })
 export class LoginFormLayoutComponent implements OnInit {
-  public errorUsername: String = '';
-  public errorPassword: String = '';
+  public errorMessage: String = '';
+  public showMessage: Boolean = false;
+
+  @Output() public toastProps: Toast = {
+    type: 'danger',
+    message: this.errorMessage,
+    show: this.showMessage
+  };
 
   public user: User = {
     username: '',
@@ -27,8 +34,15 @@ export class LoginFormLayoutComponent implements OnInit {
 
   onSubmit() {
     this.userService.login(this.user)
-      .then(_ => this.router.navigate(['dashboard']))
-      .catch(error => console.log(error));
+      .subscribe(
+        user => {
+          localStorage.setItem('@worldchat/user', JSON.stringify(user));
+          this.router.navigate(['dashboard']);
+        },
+        ({ error }) => {
+          this.toastProps.show = true;
+          this.toastProps.message = error.message;
+        }
+      )
   }
-
 }
