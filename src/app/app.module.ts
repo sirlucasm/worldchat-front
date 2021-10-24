@@ -8,7 +8,6 @@ import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { DashboardLayoutComponent } from './layouts/dashboard-layout/dashboard-layout.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/auth/login/login.component';
@@ -21,7 +20,6 @@ import { ToastLayoutComponent } from './layouts/toast-layout/toast-layout.compon
   declarations: [
     AppComponent,
     DashboardComponent,
-    DashboardLayoutComponent,
     SignupComponent,
     LoginComponent,
     AuthLayoutComponent,
