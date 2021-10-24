@@ -37,7 +37,7 @@ export class LoginFormLayoutComponent implements OnInit {
       .subscribe(
         user => {
           localStorage.setItem('@worldchat/user', JSON.stringify(user));
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['chats']);
         },
         ({ error }) => {
           this.toastProps.show = true;

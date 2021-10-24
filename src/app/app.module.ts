@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ChatComponent } from './pages/chat/chat.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/auth/login/login.component';
@@ -15,17 +15,23 @@ import { LoginFormLayoutComponent } from './layouts/auth-layout/login-form-layou
 import { SignupFormLayoutComponent } from './layouts/auth-layout/signup-form-layout/signup-form-layout.component';
 import { FormsModule } from '@angular/forms';
 import { ToastLayoutComponent } from './layouts/toast-layout/toast-layout.component';
+import { MenuLayoutComponent } from './layouts/menu-layout/menu-layout.component';
+import { ChatLayoutComponent } from './layouts/chat-layout/chat-layout.component';
+import { ChatListLayoutComponent } from './layouts/chat-list-layout/chat-list-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
+    ChatComponent,
     SignupComponent,
     LoginComponent,
     AuthLayoutComponent,
     LoginFormLayoutComponent,
     SignupFormLayoutComponent,
     ToastLayoutComponent,
+    MenuLayoutComponent,
+    ChatLayoutComponent,
+    ChatListLayoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatLayoutComponent } from './layouts/chat-layout/chat-layout.component';
 
 import { LoginComponent } from './pages/auth/login/login.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ChatComponent } from './pages/chat/chat.component';
 import { AuthGuardService as AuthGuard } from './services/auth/auth-guard.service';
 import { LoggedAuthGuardService as LoggedAuthGuard } from './services/auth/logged-auth-guard.service';
 
@@ -20,8 +21,8 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: 'dashboard',
-        component: DashboardComponent,
+        path: 'chats',
+        component: ChatComponent,
       },
     ],
     canActivate: [AuthGuard]

@@ -14,7 +14,7 @@ export class LoggedAuthGuardService {
 
   canActivate(): Boolean {
     if (this.auth.isAuthenticated()) {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['chats']);
       return false
     }
     return true;

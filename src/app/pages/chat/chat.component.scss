@@ -1,0 +1,7 @@
+.chat-grid {
+    display: grid;
+    height: 100vh;
+
+    grid-template-columns: 5fr 30fr 40fr;
+    grid-template-rows: 100fr;
+}
