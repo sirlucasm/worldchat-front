@@ -1,5 +1,9 @@
 <div class="chat-grid">
-    <app-menu-layout></app-menu-layout>
-    <app-chat-list-layout></app-chat-list-layout>
+    <app-menu-layout [user] = "user"></app-menu-layout>
+    <app-chat-list-layout
+        [user] = "user"
+        [friendships] = "friendships"
+        [roomUsers] = "roomUsers"
+    ></app-chat-list-layout>
     <app-chat-layout></app-chat-layout>
 </div>

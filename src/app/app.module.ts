@@ -18,6 +18,9 @@ import { ToastLayoutComponent } from './layouts/toast-layout/toast-layout.compon
 import { MenuLayoutComponent } from './layouts/menu-layout/menu-layout.component';
 import { ChatLayoutComponent } from './layouts/chat-layout/chat-layout.component';
 import { ChatListLayoutComponent } from './layouts/chat-list-layout/chat-list-layout.component';
+import { FriendshipService } from './services/friendship.service';
+import { RoomService } from './services/room.service';
+import { RoomUserService } from './services/room-user.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { ChatListLayoutComponent } from './layouts/chat-list-layout/chat-list-la
     FormsModule
   ],
   providers: [
-    UserService
+    UserService,
+    FriendshipService,
+    RoomService,
+    RoomUserService
   ],
   bootstrap: [AppComponent]
 })

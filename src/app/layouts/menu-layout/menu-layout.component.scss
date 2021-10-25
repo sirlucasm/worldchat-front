@@ -6,7 +6,7 @@
     .logo-area {
         background-color: rgb(24, 102, 167);
         padding: 8px;
-        height: 70px;
+        height: 60px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -40,8 +40,9 @@
                 border-radius: 50%;
                 margin-top: 10px;
                 .img {
-                    width: 60px;
-                    height: 60px;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
                     -webkit-user-drag: none;
                 }
             }
@@ -52,7 +53,7 @@
             transition: .1s;
             width: 100%;
             text-align: center;
-            padding: 25px 0;
+            padding: 15px 0;
             &:hover {
                 background-color: #353535;
                 i {
@@ -61,7 +62,7 @@
             }
             i {
                 color: #fff;
-                font-size: 21px;
+                font-size: 19px;
             }
         }
     }

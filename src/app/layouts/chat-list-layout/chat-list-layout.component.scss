@@ -1,0 +1,69 @@
+.chat-list {
+    background-color: rgb(243, 247, 249);
+    height: 100%;
+
+    .title-area {
+        width: 100%;
+        border-bottom: 1px solid #dadada;
+        border-right: 1px solid #dadada;
+        padding: 16px 0;
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba(49, 49, 49, 0.967);
+            margin-left: 10px;
+            user-select: none;
+        }
+    }
+
+    .friends, .rooms {
+        max-height: 435px;
+        overflow-y: auto;
+        .friends-title, .rooms-title {
+            margin-top: 16px;
+            margin-left: 10px;
+            h3 {
+                color: rgba(49, 49, 49, 0.767);
+                font-size: .9rem;
+            }
+            margin-bottom: 10px;
+        }
+        .friends-list, .rooms-list {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 16px 10px;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: rgba(225, 232, 236, .676);
+            }
+
+            .pic-area {
+                img {
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    -webkit-user-drag: none;
+                }
+            }
+
+            .info-area {
+                margin-left: 12px;
+                position: relative;
+                top: 3px;
+                h3 {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: rgba(49, 49, 49, 0.867);
+                }
+                span {
+                    font-size: .8rem;
+                    color: rgba(49, 49, 49, 0.667);
+                    position: relative;
+                    top: -6px;
+                }
+            }
+        }
+    }
+}

@@ -7,15 +7,17 @@ import { User } from '../interfaces/user.interface';
   providedIn: 'root'
 })
 export class UserService {
-
-  constructor(private API: HttpClient) {}
+  public stored;
+  constructor(private API: HttpClient) {
+    this.stored = JSON.parse(localStorage.getItem('@worldchat/user') || '');
+  }
 
   createAccount (params: User) {
     return this.API.post(environment.API_HOST + 'users', params);
   }
 
-  currentUser (params: any) {
-    return this.API.get(environment.API_HOST + 'users/:id', { params: { id: params.id } });
+  currentUser () {
+    return this.API.get(environment.API_HOST + 'users/' + this.stored.id);
   }
 
   all () {

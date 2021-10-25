@@ -1,1 +1,35 @@
-<p>chat-list-layout works!</p>
+<div class="chat-list">
+    <div class="title-area">
+        <h2>Conversas</h2>
+    </div>
+
+    <div>
+        <div class="friends" id="scroll-design">
+            <div class="friends-title">
+                <h3>Amigos ({{ friendships.length }})</h3>
+            </div>
+            <div *ngFor="let friendship of friendships; let i = index" class="friends-list">
+                <div class="pic-area">
+                    <img src="{{ friendship.toUser.profile_pic ? friendship.toUser.profile_pic : 'assets/icons/user.png' }}"/>
+                </div>
+                <div class="info-area">
+                    <h3>{{ friendship.toUser.username }}</h3>
+                    <span>{{ friendship.toUser.email }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="rooms" id="scroll-design">
+            <div class="rooms-title">
+                <h3>Salas ({{ roomUsers.length }})</h3>
+            </div>
+            <div *ngFor="let roomUser of roomUsers; let i = index" class="rooms-list">
+                <div class="pic-area">
+                    <img src="{{ roomUser.room.roomPic ? roomUser.room.roomPic : 'assets/icons/user.png' }}"/>
+                </div>
+                <div class="info-area">
+                    <h3>{{ roomUser.room.name }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
