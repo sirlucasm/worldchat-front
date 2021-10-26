@@ -16,8 +16,8 @@ export class ChatMessageService {
     return this.API.post(environment.API_HOST + 'chat-messages', params);
   }
 
-  messages () {
-    return this.API.get(environment.API_HOST + 'chat-messages/messages/' + this.stored.id);
+  messages (params: any) {
+    return this.API.get(environment.API_HOST + 'chat-messages/messages/' + params.chatId);
   }
 
   deleteMessage (params: any) {

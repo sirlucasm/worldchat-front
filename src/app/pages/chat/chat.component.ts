@@ -52,7 +52,7 @@ export class ChatComponent implements OnInit {
       )
   }
 
-  selectChat (friendship: any) {
+  selectFriend (friendship: any) {
     sessionStorage.setItem('@worldchat/selectedChat', JSON.stringify(friendship));
     this.router.navigate(['chats/conversar']);
   }

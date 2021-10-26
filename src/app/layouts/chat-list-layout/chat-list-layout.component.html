@@ -8,7 +8,7 @@
             <div class="friends-title">
                 <h3>Amigos ({{ friendships.length }})</h3>
             </div>
-            <div *ngFor="let friendship of friendships; let i = index" class="friends-list" (click)="selectChat(friendship)">
+            <div *ngFor="let friendship of friendships; let i = index" class="friends-list" (click)="selectFriend(friendship)">
                 <div class="pic-area">
                     <img src="{{ friendship.toUser.profile_pic ? friendship.toUser.profile_pic : 'assets/icons/user.png' }}"/>
                 </div>

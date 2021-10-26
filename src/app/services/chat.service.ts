@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ChatService {
 
   public stored;
@@ -26,3 +28,7 @@ export class ChatService {
     return this.API.delete(environment.API_HOST + 'chats/' + params.id);
   }
 }
+function first(): import("rxjs").OperatorFunction<Object, unknown> {
+  throw new Error('Function not implemented.');
+}
+

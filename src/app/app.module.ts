@@ -44,14 +44,7 @@ import { ChatMessageService } from './services/chat-message.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [
-    UserService,
-    FriendshipService,
-    RoomService,
-    RoomUserService,
-    ChatService,
-    ChatMessageService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
