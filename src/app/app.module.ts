@@ -21,6 +21,8 @@ import { ChatListLayoutComponent } from './layouts/chat-list-layout/chat-list-la
 import { FriendshipService } from './services/friendship.service';
 import { RoomService } from './services/room.service';
 import { RoomUserService } from './services/room-user.service';
+import { ChatService } from './services/chat.service';
+import { ChatMessageService } from './services/chat-message.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { RoomUserService } from './services/room-user.service';
     UserService,
     FriendshipService,
     RoomService,
-    RoomUserService
+    RoomUserService,
+    ChatService,
+    ChatMessageService
   ],
   bootstrap: [AppComponent]
 })

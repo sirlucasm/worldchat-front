@@ -19,6 +19,7 @@
     .friends, .rooms {
         max-height: 435px;
         overflow-y: auto;
+        user-select: none;
         .friends-title, .rooms-title {
             margin-top: 16px;
             margin-left: 10px;

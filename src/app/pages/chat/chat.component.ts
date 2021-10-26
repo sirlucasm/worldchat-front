@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { FriendshipService } from 'src/app/services/friendship.service';
 import { RoomUserService } from 'src/app/services/room-user.service';
@@ -17,7 +18,8 @@ export class ChatComponent implements OnInit {
   constructor(
     private userService: UserService,
     private friendshipService: FriendshipService,
-    private roomUserService: RoomUserService
+    private roomUserService: RoomUserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +50,11 @@ export class ChatComponent implements OnInit {
         data => this.roomUsers = data,
         ({ error }) => console.log(error.message)
       )
+  }
+
+  selectChat (friendship: any) {
+    sessionStorage.setItem('@worldchat/selectedChat', JSON.stringify(friendship));
+    this.router.navigate(['chats/conversar']);
   }
 
 }

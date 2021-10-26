@@ -9,7 +9,7 @@ import { User } from '../interfaces/user.interface';
 export class UserService {
   public stored;
   constructor(private API: HttpClient) {
-    this.stored = JSON.parse(localStorage.getItem('@worldchat/user') || '');
+    this.stored = JSON.parse(localStorage.getItem('@worldchat/user') || '{}');
   }
 
   createAccount (params: User) {

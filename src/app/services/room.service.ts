@@ -9,7 +9,7 @@ export class RoomService {
 
   public stored;
   constructor(private API: HttpClient) {
-    this.stored = JSON.parse(localStorage.getItem('@worldchat/user') || '');
+    this.stored = JSON.parse(localStorage.getItem('@worldchat/user') || '{}');
   }
 
   createRoom (params: any) {
