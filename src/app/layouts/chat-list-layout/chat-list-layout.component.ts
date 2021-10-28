@@ -14,7 +14,6 @@ export class ChatListLayoutComponent implements OnInit {
   @Input() public user!: User;
   @Input() public friendships: Array<any> = [];
   @Input() public roomUsers: Array<any> = [];
-  @Input() public selectFriend!: (args: any) => void;
 
   public currentUser: any;
   
@@ -28,6 +27,11 @@ export class ChatListLayoutComponent implements OnInit {
     } else {
       return friendship.sendedBy[key];
     }
+  }
+
+  selectFriend (friendship: any) {
+    sessionStorage.setItem('@worldchat/selectedChat', JSON.stringify(friendship));
+    this.router.navigate(['chats/conversar']);
   }
 
   ngOnInit(): void {

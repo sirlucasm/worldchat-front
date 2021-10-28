@@ -19,7 +19,6 @@ export class ChatComponent implements OnInit {
     private userService: UserService,
     private friendshipService: FriendshipService,
     private roomUserService: RoomUserService,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -50,11 +49,6 @@ export class ChatComponent implements OnInit {
         data => this.roomUsers = data,
         ({ error }) => console.log(error.message)
       )
-  }
-
-  selectFriend (friendship: any) {
-    sessionStorage.setItem('@worldchat/selectedChat', JSON.stringify(friendship));
-    this.router.navigate(['chats/conversar']);
   }
 
 }
