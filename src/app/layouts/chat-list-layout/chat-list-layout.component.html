@@ -13,8 +13,8 @@
                     <img src="{{ friendship.toUser.profile_pic ? friendship.toUser.profile_pic : 'assets/icons/user.png' }}"/>
                 </div>
                 <div class="info-area">
-                    <h3>{{ friendship.toUser.username }}</h3>
-                    <span>{{ friendship.toUser.email }}</span>
+                    <h3>{{ showFriendshipInfo(friendship, 'username') }}</h3>
+                    <span>{{ showFriendshipInfo(friendship, 'email') }}</span>
                 </div>
             </div>
         </div>
