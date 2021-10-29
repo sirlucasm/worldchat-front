@@ -1,0 +1,23 @@
+.chat-error {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    h3 {
+        font-size: 1.09rem;
+        font-weight: 600;
+        color: rgba(49, 49, 49, 0.967);
+    }
+    .question {
+        margin-top: 10px;
+        span {
+            font-size: .96rem;
+        }
+    }
+    .btn-area {
+        margin-top: 6px;
+    }
+}

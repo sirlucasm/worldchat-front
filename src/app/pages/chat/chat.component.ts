@@ -14,6 +14,7 @@ export class ChatComponent implements OnInit {
   public user!: any;
   public friendships: any = [];
   public roomUsers: any = [];
+  public selectedFriend: any;
 
   constructor(
     private userService: UserService,
@@ -51,4 +52,7 @@ export class ChatComponent implements OnInit {
       )
   }
 
+  selectFriend (friendship: any) {
+    this.selectedFriend = friendship;
+  }
 }

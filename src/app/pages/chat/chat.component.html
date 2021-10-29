@@ -4,6 +4,14 @@
         [user] = "user"
         [friendships] = "friendships"
         [roomUsers] = "roomUsers"
+        (selectedFriendEvent)="selectFriend($event)"
     ></app-chat-list-layout>
-    <app-chat-layout></app-chat-layout>
+    <ng-template [ngIf]="selectedFriend" [ngIfElse]="noSelectedFriend">
+        <app-chat-layout
+            [selectedFriend]="selectedFriend"
+        ></app-chat-layout>
+    </ng-template>
+    <ng-template #noSelectedFriend>
+        <app-selected-friend-verification></app-selected-friend-verification>
+    </ng-template>
 </div>

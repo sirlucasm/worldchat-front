@@ -23,6 +23,9 @@ import { RoomService } from './services/room.service';
 import { RoomUserService } from './services/room-user.service';
 import { ChatService } from './services/chat.service';
 import { ChatMessageService } from './services/chat-message.service';
+import { ChatVerificationComponent } from './layouts/chat-layout/chat-verification/chat-verification.component';
+import { SelectedFriendVerificationComponent } from './layouts/chat-layout/selected-friend-verification/selected-friend-verification.component';
+import { ChatMessagesComponent } from './layouts/chat-layout/chat-messages/chat-messages.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { ChatMessageService } from './services/chat-message.service';
     MenuLayoutComponent,
     ChatLayoutComponent,
     ChatListLayoutComponent,
+    ChatVerificationComponent,
+    SelectedFriendVerificationComponent,
+    ChatMessagesComponent,
   ],
   imports: [
     BrowserModule,

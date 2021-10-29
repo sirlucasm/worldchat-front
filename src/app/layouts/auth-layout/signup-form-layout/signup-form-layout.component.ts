@@ -13,7 +13,7 @@ export class SignupFormLayoutComponent implements OnInit {
   public errorMessage: String = '';
   public showMessage: Boolean = false;
 
-  @Output() public toastProps: Toast = {
+  public toastProps: Toast = {
     type: 'danger',
     message: this.errorMessage,
     show: this.showMessage
